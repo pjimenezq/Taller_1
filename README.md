@@ -1,6 +1,6 @@
 # Taller 1
 
-Nombre del grupo:
+Nombre del grupo: Agrocode industries
 
 Integrantes: Paula Jiménez Quiñones, Mario Alejandro Martinez y David Rodriguez Rueda
 
