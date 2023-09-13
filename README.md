@@ -10,3 +10,27 @@ Integrantes: Paula Jiménez Quiñones, Mario Alejandro Martinez y David Rodrigue
 ## Segundo punto
 
 ---
+## Tercer punto
+
+---
+## Cuarto punto
+
+---
+## Quinto punto
+
+---
+## Sexto punto
+
+---
+## Séptimo punto
+
+---
+## Octavo punto
+
+---
+## Noveno punto
+
+---
+## Décimo punto
+
+---
