@@ -1,1 +1,3 @@
-# Taller_1
+# Taller 1
+**Nombre del grupo:**
+**Integrantes:** Paula Jiménez Quiñones, Mario Alejandro Martinez y David Rodriguez Rueda
