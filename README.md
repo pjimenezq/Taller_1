@@ -45,6 +45,22 @@ Realice un programa que lea dos números reales y determine si el primero es mú
 
 Y de esta manera fue solucionado el problema incialmente planteado.
 
+##### El código del rpoblema es el siguiente:
+```
+#declaramos variables
+x : float
+y : float
+#inicializamos variables
+print("Comprobaremos si x es multiplo de y")
+x = float(input("Introduzca un valor para x: "))
+y = float(input("Introduzca un valor para y: "))
+#condicionamos
+if x % y == 0:
+    print(x, "es multiplo de", y)
+else:
+    print(x, "no es multiplo", y)
+```
+
 ##### El diagrama de flujo representando la solución del problema es el siguiente:
 ```mermaid
 graph TD;
@@ -72,6 +88,11 @@ Fin(Fin)
 
 ## Octavo punto
 
+### Problema planteado:
+Escriba un programa al que se le ingrese la frecuencia de una onda en hz y como salida arroje en que parte del espectro electromagnético se encuentra.
+
+### Solución del problema:
+##### Contexto previo a la solución del problema: Tener en cuenta que la solución 
 
 ## Noveno punto
 
