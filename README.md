@@ -92,7 +92,43 @@ Fin(Fin)
 Escriba un programa al que se le ingrese la frecuencia de una onda en hz y como salida arroje en que parte del espectro electromagnético se encuentra.
 
 ### Solución del problema:
-##### Contexto previo a la solución del problema: Tener en cuenta que la solución 
+1. Se declara variable que en este caso sería: hz. Esta variable puede ser un flotante.
+2. La inicialización de la variable va a ser un número que introduzca el sujeto que esté utilizando el programa.
+3. Después de esto condicionamos teniendo en cuenta que hay varias áreas del espectro electromagnético.
+   * Iniciamos con la condición if, si el número ingresado por la persona está en el campo ingresado por esta persona saldría un mensaje sobre cual es el espectro electromagnético
+   * Como hay muchas más condiciones en las cuales las ondas pueden estar en otras áreas del espectro electromagnético entonces se usa elif para cada una de ellas.
+   * El uso de else lo utilizaremos para la última área del espectro electromagnético que vamos a tener en cuanta según la frecuencia.
+
+Y de esta manera se solucionaría el problema planteado
+
+##### El código de la solución del problema es el siguiente:
+```
+#Cual es el problema a abordar?
+print("¿En que espectro electromagnético está la onda en hertz?")
+#Declaramos variables
+hz : float
+#Inicializamos variable
+hz = float(input("Ingrese los hertz que usted estime para una onda(se recomienda en notación cientifica): "))
+#Condicionamos
+if hz <= 30e4:
+    print("Cuando la frecuencia de la honda es de", hz, "hertz, la onda tiene un espectro electromagnético de frecuencias extremadamente bajas")
+elif 30e4 < hz <= 30e9:
+    print("Cuando la frecuencia de la honda es de", hz, "hertz, la onda tiene un espectro electromagnético de tipo: Radio")
+elif 30e9 < hz <= 30e11:
+    print("Cuando la frecuencia de la honda es de", hz, "hertz, la onda tiene un espectro electromagnético de tipo: Microondas")
+elif 30e11 < hz <= 30e14:
+    print("Cuando la frecuencia de la honda es de", hz, "hertz, la onda tiene un espectro electromagnético de tipo: Infrarrojo")
+elif 30e14 < hz <= 30e15:
+    print("Cuando la frecuencia de la honda es de", hz, "hertz, la onda tiene un espectro electromagnético visible para el ojo humano")
+elif 30e15 < hz <= 30e16:
+    print("Cuando la frecuencia de la honda es de", hz, "hertz, la onda tiene un espectro electromagnético de tipo: Ultravioleta")
+elif 30e16 < hz <= 30e20:
+    print("Cuando la frecuencia de la honda es de", hz, "hertz, la onda tiene un espectro electromagnético de tipo: Rayos X")
+elif 30e20 < hz <= 30e21:
+    print("Cuando la frecuencia de la honda es de", hz, "hertz, la onda tiene un espectro electromagnético de tipo: Rayos Gamma")
+else:
+    print("Cuando la frecuencia de la honda es de", hz, "hertz, la onda tiene un espectro electromagnético de tipo: Rayos cósmicos")
+```
 
 ## Noveno punto
 
