@@ -20,9 +20,9 @@ Realice un programa que lea tres números reales y determine cuál es el mayor.
 1. Declarar variables
    * Se declaran tres variables, donde cada una de las variables corresponde a uno de los tres números reales que lee el programa.
    * Se establecen los nombres de las variables utilizando _Camelcase_, estas se nombran numeroUno, numeroDos y numeroTres.
-   * Se especifica que las variables son de tipo float, dado a que el programa requiere de números reales.
+   * Se especifica que las variables son de tipo _float_, dado a que el programa requiere de números reales.
 2. Inicializar variables
-    * Se utiliza la funcion _input()_ para que el usuario pueda ingresar los tres números reales al programa.
+    * Se utiliza la función _input()_ para que el usuario pueda ingresar los tres números reales al programa.
 3. Estructura if-elif-else
    * Con el operador lógico > y el operador relacional _and_ se establece la condición de que si el primer número ingresado es mayor que el segundo y mayor que el tercero, entonces ese número es el mayor. Por lo tanto, se imprime ese número.
    * Con _elif_ y el operador lógico > se determina que, en caso de que la anterior condición no se cumpla, cuando el segundo número ingresado es mayor que el tercero, ese número es el mayor. Por ende, se imprime este segundo número.
@@ -65,8 +65,36 @@ flowchart TD;
     G--No-->I[El tercer número real es el mayor]-->J;
 ```
 ## Tercer punto
+**Problema planteado**
 
+Realice un programa que lea un número entero y determine si es par o impar.
 
+**Explicación de la solución**
+1. Declarar variables
+   * Se declara una variable, que corresponde al número entero que lee el programa.
+   * Se establece el nombre de la variable utilizando _Camelcase_, esta se nombra numeroEntero.
+   * Se especifica que la variable es de tipo _int_, dado a que el programa requiere de un número entero.
+2. Inicializar variable
+    * Se utiliza la función _input()_ para que el usuario pueda ingresar el número entero que desee al programa.
+3. Estructura if-else
+   * Con el operador aritmético % y el operador lógico == se establece la condición de que si el modulo entre el número entero ingresado y el número 2 es igual a 0, entonces el número ingresado al programa es par. Sí la condición se cumple, entonces se imprime la frase "El número insertado es par".
+   * Con _else_ se establece que cuando la anterior condición no se cumple, el número ingresado al programa es impar. Por ende, se imprime la frase "El número insertado es impar".
+
+**Código**
+```
+print("Este programa lee un número entero y determina si es par o impar.") #Se explica cual es el propósito del programa
+
+#Se declara la variable; estableciendo su nombre utilizando Camelcase y especificando que esta es de tipo int (dado a que el programa funciona con números enteros)
+numeroEntero:int
+
+#Se utiliza la función input(), para que el usuario pueda ingresar el dato del número entero al programa
+numeroEntero=int(input("Inserte un número entero "))
+
+if numeroEntero%2==0:
+    print("El número insertado es par")#Cuando el número ingresado se divide entre dos y no queda ningún residuo, significa que este es par
+else:
+    print("El número insertado es impar")#El número es impar cuando este se divide entre 2 y el residuo no es cero.
+```
 ## Cuarto punto
 
 ### Problema planteado:
