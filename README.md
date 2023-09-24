@@ -1,12 +1,15 @@
 # Taller 1
 
 ### Nombre del grupo:
-# Agrocode industry
+Agrocode industry
 
-Integrantes:
+### Integrantes:
 * Paula Jiménez Quiñones
 * Mario Alejandro Martinez
 * David Rodriguez Rueda
+
+### Logo:
+![logo](https://github.com/pjimenezq/Taller_1/assets/141860508/193f2c5d-2997-40d1-9a4b-ba168d9fdf8c)
 
 ## Primer punto
 
@@ -75,8 +78,8 @@ Realice un programa que lea un número entero y determine si es par o impar.
    * Se establece el nombre de la variable utilizando _Camelcase_, esta se nombra numeroEntero.
    * Se especifica que la variable es de tipo _int_, dado a que el programa requiere de un número entero.
 2. Inicializar variable
-    * Se utiliza la función _input()_ para que el usuario pueda ingresar el número entero que desee al programa.
-3. Estructura if-else
+   * Se utiliza la función _input()_ para que el usuario pueda ingresar el número entero que desee al programa.
+4. Estructura if-else
    * Con el operador aritmético % y el operador lógico == se establece la condición de que si el modulo entre el número entero ingresado y el número 2 es igual a 0, entonces el número ingresado al programa es par. Sí la condición se cumple, entonces se imprime la frase "El número insertado es par".
    * Con _else_ se establece que cuando la anterior condición no se cumple, el número ingresado al programa es impar. Por ende, se imprime la frase "El número insertado es impar".
 
@@ -109,7 +112,7 @@ else:
 
 Y de esta manera fue solucionado el problema incialmente planteado.
 
-##### El código del rpoblema es el siguiente:
+##### El código del problema es el siguiente:
 ```
 #declaramos variables
 x : float
