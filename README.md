@@ -229,9 +229,9 @@ else:
     print("No es ni vocal ni consonante.")
 ```
 
+## Séptimo Punto
 
-## Séptimo punto
-
+## Octavo Punto
 
 ### Problema planteado:
 ### Escriba un programa al que se le ingrese la frecuencia de una onda en hz y como salida arroje en que parte del espectro electromagnético se encuentra.
