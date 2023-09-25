@@ -230,7 +230,888 @@ else:
 ```
 
 ## Séptimo Punto
+**Problema planteado**
 
+Escriba un programa que pida 5 números reales y calcule las siguientes operaciones:
+* El promedio
+* La mediana
+* El promedio multiplicativo (multiplica todos y luego calcula la raíz de la cantidad de operandos)
+* Ordenar los números de forma ascendente
+* Ordenar los números de forma descendente
+* La potencia del mayor número elevado al menor número
+* La raíz cúbica del menor número
+
+**Explicación de la solución**
+1. Declarar variables
+    * Se declaran cinco variables, donde cada una de las variables corresponde a uno de los cinco números reales que lee el programa.
+    * Se establecen los nombres de las variables, por practicidad estas se nombran a, b, c, d y e. 
+    * Se especifica que las variables son de tipo float, dado a que el programa requiere de números reales.
+2. Inicializar variables
+    * Se utiliza la función input() para que el usuario pueda ingresar los cinco números reales al programa.
+3. El promedio
+    * Utilizando los operadores aritméticos + y / se establece que para calcular el promedio se debe sumar los cinco números ingresados y luego se deben dividir entre 5 (que es la cantidad de números ingresados). La suma se puso entre paréntesis, con el fin de que se le dé prioridad a la suma y luego se lleve a cabo la división.
+    * El programa imprime el resultado del promedio
+4. El promedio multiplicativo
+    * Utilizando los operadores aritméticos * y ** se establece que para calcular el promedio multiplicativo se deben multiplicar los cinco números ingresados y luego se debe elevar el resultado a la 1/5. Se eleva a la 1/5, dado a que la forma radical se convierte en un exponente en forma de fracción y debido a que se debe calcular la raíz de la cantidad de operandos y esta cantidad corresponde a 5. La multiplicación y la fracción se pusieron entre paréntesis, para que primero se calculara la multiplicación y la división y posteriormente se hiciera el cálculo de la potencia.
+    * El programa imprime el resultado del promedio multiplicativo.
+5. Orden ascendente y mediana
+    * Utilizando la estructura _if-elif-else_ y el operador lógico > se establece la forma en la que se deberían organizar los cinco números ingresados de tal manera que queden organizados desde el más pequeño hasta el más grande.
+    * Por medio de la estructura condicional, se logra que el programa lea los 5 números ingresados, determine a cuál de los 120 posibles casos de orden de las variables pertenece e imprima el valor de estas variables en orden ascendente.
+    * Para desarrollar el programa que ordena a los números de forma ascendente, se utiliza _if-elif-else_ y > para determinar el orden ascendente de las variables cuando la primera variable ingresada (_a_) es la menor y por lo tanto la primera. En total, cuando la variable _a_ es la menor, las variables se pueden organizar en 24 formas distintas. 
+    * Luego, se utilizó el mismo código, pero reemplazando el nombre de la primera variable por el nombre de la segunda para obtener el orden de las variables cuando la segunda variable ingresada (_b_) es la menor. Esto se hizo sucesivamente hasta tener el código con los 120 casos de organización de las variables.
+    * Dado a que ya se tienen las variables organizadas de menor a mayor, se le pide al programa que en cada uno de los casos se imprima la variable que se encuentra en la mitad, obteniendo de esta forma la mediana. Esto se llevó a cabo manualmente.
+6. Orden descendente
+    * Ya teniendo el código para ordenar los números de forma ascendente, se copió este código y se cambiaron todos < por el operador lógico >.
+7. La potencia del mayor número elevado al menor número y la raíz cúbica del menor número
+    * Utilizando _if_ , _and_ y el operador lógico < se establece que si la variable _a_ es menor que las otras cuatro variables entonces el programa debe imprimir la raíz cúbica de _a_. Este cálculo se plantea como _a_ elevado a ½, dado a que la raíz es transformada a una potencia. 
+    * Posteriormente, se utiliza la estructura _if-elif-else_ y el operador lógico > para determinar cuál de las otras variables es la mayor. Cuando el programa determina el mayor número, imprime este mayor número elevado al menor número. Este cálculo se establece con el operador aritmético **.
+    * El mismo código se copia y se pega y se cambia el nombre de las variables para que el programa haga el mismo proceso cuando las variables _b_, _c_, _d_ y _e_ son la menores.
+
+**Código**
+```
+print("Este programa permite hallar el promedio, la mediana, el promedio multiplicativo, el orden ascendente y descendente de los números, la potencia del mayor número elevado al menor número y la raíz cúbica del menor número cuando se insertan 5 números reales")
+
+a:float
+b:float
+c:float
+d:float
+e:float
+
+a=float(input("Ingrese el primer número real "))
+b=float(input("Ingrese el segundo número real "))
+c=float(input("Ingrese el tercer número real "))
+d=float(input("Ingrese el cuarto número real "))
+e=float(input("Ingrese el quinto número real "))
+
+promedio=(a+b+c+d+e)/5
+print("El promedio de los cinco números reales es", str(promedio))
+
+promedioMultiplicativo=(a*b*c*d*e)**(1/5)
+print("El promedio multiplicativo es", str(promedioMultiplicativo))
+
+if a<b and a<c and a<d and a<e:
+    if b<c:
+        if c<d:
+            if d<e:
+                print("Los números ordenados de forma ascendente son: ", str (a ), str(b ), str(c ), str(d ), str(e ))
+                print("La mediana es: ", str(c))
+            elif e<b:
+                print("Los números ordenados de forma ascendente son: ", str (a ), str(e ), str(b ), str(c ), str(d ))
+                print("La mediana es: ", str(b))
+            elif c<e:
+                print("Los números ordenados de forma ascendente son: ", str (a ), str(b ), str(c ), str(e ), str(d ))
+                print("La mediana es: ", str(c))
+            else:
+                print("Los números ordenados de forma ascendente son: ", str (a ), str(b ), str(e ), str(c ), str(d ))
+                print("La mediana es: ", str(e))
+        else:
+            if b<d:
+                if d<e:
+                    if e<c:
+                        print("Los números ordenados de forma ascendente son: ", str (a ), str(b ), str(d ), str(e ), str(c ))
+                        print("La mediana es: ", str(d))
+                    else:
+                        print("Los números ordenados de forma ascendente son: ", str (a ), str(b ), str(d ), str(c ), str(e ))
+                        print("La mediana es: ", str(d))
+                else:
+                    if b<e:
+                        print("Los números ordenados de forma ascendente son: ", str (a ), str(b ), str(e ), str(d ), str(c ))
+                        print("La mediana es: ", str(e))
+                    else:
+                        print("Los números ordenados de forma ascendente son: ", str (a ), str(e ), str(b ), str(d ), str(c ))
+                        print("La mediana es: ", str(b))
+            else:
+                if e<c:
+                    if e<d:
+                        print("Los números ordenados de forma ascendente son: ", str (a ), str(e ), str(d ), str(b ), str(c ))
+                        print("La mediana es: ", str(d))
+                    elif b<e:
+                        print("Los números ordenados de forma ascendente son: ", str (a ), str(d ), str(b ), str(e ), str(c ))
+                        print("La mediana es: ", str(b))
+                    else:
+                        print("Los números ordenados de forma ascendente son: ", str (a ), str(d ), str(e ), str(b ), str(c ))
+                        print("La mediana es: ", str(e))
+                else:
+                    print("Los números ordenados de forma ascendente son: ", str (a ), str(d ), str(b ), str(c ), str(e ))
+                    print("La mediana es: ", str(b))
+
+    elif c<d  and c<e:
+        if b<d:
+            if d<e:
+                print("Los números ordenados de forma ascendente son: ", str (a ), str(c ), str(b ), str(d ), str(e ))
+                print("La mediana es: ", str(b))
+            elif b<e:
+                print("Los números ordenados de forma ascendente son: ", str (a ), str(c ), str(b ), str(e ), str(d ))
+                print("La mediana es: ", str(b))
+            else:
+                print("Los números ordenados de forma ascendente son: ", str (a ), str(c ), str(e ), str(b ), str(d ))
+                print("La mediana es: ", str(e))
+        elif d<e:
+            if e<b:
+                print("Los números ordenados de forma ascendente son: ", str (a ), str(c ), str(d ), str(e ), str(b ))
+                print("La mediana es: ", str(d))
+            else:
+                print("Los números ordenados de forma ascendente son: ", str (a ), str(c ), str(d ), str(b ), str(e ))
+                print("La mediana es: ", str(d))
+        else:
+            print("Los números ordenados de forma ascendente son: ", str (a ), str(c ), str(e ), str(d ), str(b ))
+            print("La mediana es: ", str(e))
+    else:
+        if d<c:
+            if d<e:
+                if b<e:
+                    print("Los números ordenados de forma ascendente son: ", str (a ), str(d ), str(c ), str(b ), str(e ))
+                    print("La mediana es: ", str(c))
+                elif c<e:
+                    print("Los números ordenados de forma ascendente son: ", str (a ), str(d ), str(c ), str(e ), str(b ))
+                    print("La mediana es: ", str(c))
+                else:
+                    print("Los números ordenados de forma ascendente son: ", str (a ), str(d ), str(e ), str(c ), str(b ))
+                    print("La mediana es: ", str(e))
+            else:
+                print("Los números ordenados de forma ascendente son: ", str (a ), str(e ), str(d ), str(c ), str(b ))
+                print("La mediana es: ", str(d))
+        else:
+            if d<b:
+                print("Los números ordenados de forma ascendente son: ", str (a ), str(e ), str(c ), str(d ), str(b ))
+                print("La mediana es: ", str(c))
+            else:
+                print("Los números ordenados de forma ascendente son: ", str (a ), str(e ), str(c ), str(b ), str(d ))
+                print("La mediana es: ", str(c))
+elif b<a and b<c and b<d and b<e:
+    if a<c:
+        if c<d:
+            if d<e:
+                print("Los números ordenados de forma ascendente son: ", str (b ), str(a ), str(c ), str(d ), str(e ))
+                print("La mediana es: ", str(c))
+            elif e<a:
+                print("Los números ordenados de forma ascendente son: ", str (b ), str(e ), str(a ), str(c ), str(d ))
+                print("La mediana es: ", str(a))
+            elif c<e:
+                print("Los números ordenados de forma ascendente son: ", str (b ), str(a ), str(c ), str(e ), str(d ))
+                print("La mediana es: ", str(c))
+            else:
+                print("Los números ordenados de forma ascendente son: ", str (b ), str(a ), str(e ), str(c ), str(d ))
+                print("La mediana es: ", str(e))
+        else:
+            if a<d:
+                if d<e:
+                    if e<c:
+                        print("Los números ordenados de forma ascendente son: ", str (b ), str(a ), str(d ), str(e ), str(c ))
+                        print("La mediana es: ", str(d))
+                    else:
+                        print("Los números ordenados de forma ascendente son: ", str (b ), str(a ), str(d ), str(c ), str(e ))
+                        print("La mediana es: ", str(d))
+                else:
+                    if a<e:
+                        print("Los números ordenados de forma ascendente son: ", str (b ), str(a ), str(e ), str(d ), str(c ))
+                        print("La mediana es: ", str(e))
+                    else:
+                        print("Los números ordenados de forma ascendente son: ", str (b ), str(e ), str(a ), str(d ), str(c ))
+                        print("La mediana es: ", str(a))
+            else:
+                if e<c:
+                    if e<d:
+                        print("Los números ordenados de forma ascendente son: ", str (b ), str(e ), str(d ), str(a ), str(c ))
+                        print("La mediana es: ", str(d))
+                    elif a<e:
+                        print("Los números ordenados de forma ascendente son: ", str (b ), str(d ), str(a ), str(e ), str(c ))
+                        print("La mediana es: ", str(a))
+                    else:
+                        print("Los números ordenados de forma ascendente son: ", str (b ), str(d ), str(e ), str(a ), str(c ))
+                        print("La mediana es: ", str(e))
+                else:
+                    print("Los números ordenados de forma ascendente son: ", str (b ), str(d ), str(a ), str(c ), str(e ))
+                    print("La mediana es: ", str(a))
+
+    elif c<d  and c<e:
+        if a<d:
+            if d<e:
+                print("Los números ordenados de forma ascendente son: ", str (b ), str(c ), str(a ), str(d ), str(e ))
+                print("La mediana es: ", str(a))
+            elif a<e:
+                print("Los números ordenados de forma ascendente son: ", str (b ), str(c ), str(a ), str(e ), str(d ))
+                print("La mediana es: ", str(a))
+            else:
+                print("Los números ordenados de forma ascendente son: ", str (b ), str(c ), str(e ), str(a ), str(d ))
+                print("La mediana es: ", str(e))
+        elif d<e:
+            if e<a:
+                print("Los números ordenados de forma ascendente son: ", str (b ), str(c ), str(d ), str(e ), str(a ))
+                print("La mediana es: ", str(d))
+            else:
+                print("Los números ordenados de forma ascendente son: ", str (b ), str(c ), str(d ), str(a ), str(e ))
+                print("La mediana es: ", str(d))
+        else:
+            print("Los números ordenados de forma ascendente son: ", str (b ), str(c ), str(e ), str(d ), str(a ))
+            print("La mediana es: ", str(e))
+    else:
+        if d<c:
+            if d<e:
+                if a<e:
+                    print("Los números ordenados de forma ascendente son: ", str (b ), str(d ), str(c ), str(a ), str(e ))
+                    print("La mediana es: ", str(c))
+                elif c<e:
+                    print("Los números ordenados de forma ascendente son: ", str (b ), str(d ), str(c ), str(e ), str(a ))
+                    print("La mediana es: ", str(c))
+                else:
+                    print("Los números ordenados de forma ascendente son: ", str (b ), str(d ), str(e ), str(c ), str(a ))
+                    print("La mediana es: ", str(e))
+            else:
+                print("Los números ordenados de forma ascendente son: ", str (b ), str(e ), str(d ), str(c ), str(a ))
+                print("La mediana es: ", str(d))
+        else:
+            if d<a:
+                print("Los números ordenados de forma ascendente son: ", str (b ), str(e ), str(c ), str(d ), str(a ))
+                print("La mediana es: ", str(c))
+            else:
+                print("Los números ordenados de forma ascendente son: ", str (b ), str(e ), str(c ), str(a ), str(d ))
+                print("La mediana es: ", str(c))
+elif c<a and c<b and c<d and c<e:
+    if a<b:
+        if b<d:
+            if d<e:
+                print("Los números ordenados de forma ascendente son: ", str (c ), str(a ), str(b ), str(d ), str(e ))
+                print("La mediana es: ", str(b))
+            elif e<a:
+                print("Los números ordenados de forma ascendente son: ", str (c ), str(e ), str(a ), str(b ), str(d ))
+                print("La mediana es: ", str(a))
+            elif b<e:
+                print("Los números ordenados de forma ascendente son: ", str (c ), str(a ), str(b ), str(e ), str(d ))
+                print("La mediana es: ", str(b))
+            else:
+                print("Los números ordenados de forma ascendente son: ", str (c ), str(a ), str(e ), str(b ), str(d ))
+                print("La mediana es: ", str(e))
+        else:
+            if a<d:
+                if d<e:
+                    if e<b:
+                        print("Los números ordenados de forma ascendente son: ", str (c ), str(a ), str(d ), str(e ), str(b ))
+                        print("La mediana es: ", str(d))
+                    else:
+                        print("Los números ordenados de forma ascendente son: ", str (c ), str(a ), str(d ), str(b ), str(e ))
+                        print("La mediana es: ", str(d))
+                else:
+                    if a<e:
+                        print("Los números ordenados de forma ascendente son: ", str (c ), str(a ), str(e ), str(d ), str(b ))
+                        print("La mediana es: ", str(e))
+                    else:
+                        print("Los números ordenados de forma ascendente son: ", str (c ), str(e ), str(a ), str(d ), str(b ))
+                        print("La mediana es: ", str(a))
+            else:
+                if e<b:
+                    if e<d:
+                        print("Los números ordenados de forma ascendente son: ", str (c ), str(e ), str(d ), str(a ), str(b ))
+                        print("La mediana es: ", str(d))
+                    elif a<e:
+                        print("Los números ordenados de forma ascendente son: ", str (c ), str(d ), str(a ), str(e ), str(b ))
+                        print("La mediana es: ", str(a))
+                    else:
+                        print("Los números ordenados de forma ascendente son: ", str (c ), str(d ), str(e ), str(a ), str(b ))
+                        print("La mediana es: ", str(e))
+                else:
+                    print("Los números ordenados de forma ascendente son: ", str (c ), str(d ), str(a ), str(b ), str(e ))
+                    print("La mediana es: ", str(a))
+
+    elif b<d  and b<e:
+        if a<d:
+            if d<e:
+                print("Los números ordenados de forma ascendente son: ", str (c ), str(b ), str(a ), str(d ), str(e ))
+                print("La mediana es: ", str(a))
+            elif a<e:
+                print("Los números ordenados de forma ascendente son: ", str (c ), str(b ), str(a ), str(e ), str(d ))
+                print("La mediana es: ", str(a))
+            else:
+                print("Los números ordenados de forma ascendente son: ", str (c ), str(b ), str(e ), str(a ), str(d ))
+                print("La mediana es: ", str(e))
+        elif d<e:
+            if e<a:
+                print("Los números ordenados de forma ascendente son: ", str (c ), str(b ), str(d ), str(e ), str(a ))
+                print("La mediana es: ", str(d))
+            else:
+                print("Los números ordenados de forma ascendente son: ", str (c ), str(b ), str(d ), str(a ), str(e ))
+                print("La mediana es: ", str(d))
+        else:
+            print("Los números ordenados de forma ascendente son: ", str (c ), str(b ), str(e ), str(d ), str(a ))
+            print("La mediana es: ", str(e))
+    else:
+        if d<b:
+            if d<e:
+                if a<e:
+                    print("Los números ordenados de forma ascendente son: ", str (c ), str(d ), str(b ), str(a ), str(e ))
+                    print("La mediana es: ", str(b))
+                elif b<e:
+                    print("Los números ordenados de forma ascendente son: ", str (c ), str(d ), str(b ), str(e ), str(a ))
+                    print("La mediana es: ", str(b))
+                else:
+                    print("Los números ordenados de forma ascendente son: ", str (c ), str(d ), str(e ), str(b ), str(a ))
+                    print("La mediana es: ", str(e))
+            else:
+                print("Los números ordenados de forma ascendente son: ", str (c ), str(e ), str(d ), str(b ), str(a ))
+                print("La mediana es: ", str(d))
+        else:
+            if d<a:
+                print("Los números ordenados de forma ascendente son: ", str (c ), str(e ), str(b ), str(d ), str(a ))
+                print("La mediana es: ", str(b))
+            else:
+                print("Los números ordenados de forma ascendente son: ", str (c ), str(e ), str(b ), str(a ), str(d ))
+                print("La mediana es: ", str(b))
+elif d<a and d<b and d<c and d<e:
+    if a<b:
+        if b<c:
+            if c<e:
+                print("Los números ordenados de forma ascencente son: ", str (d ), str(a ), str(b ), str(c ), str(e ))
+                print("La mediana es: ", str(b))
+            elif e<a:
+                print("Los números ordenados de forma ascencente son: ", str (d ), str(e ), str(a ), str(b ), str(c ))
+                print("La mediana es: ", str(a))
+            elif b<e:
+                print("Los números ordenados de forma ascencente son: ", str (d ), str(a ), str(b ), str(e ), str(c ))
+                print("La mediana es: ", str(b))
+            else:
+                print("Los números ordenados de forma ascencente son: ", str (d ), str(a ), str(e ), str(b ), str(c ))
+                print("La mediana es: ", str(e))
+        else:
+            if a<c:
+                if c<e:
+                    if e<b:
+                        print("Los números ordenados de forma ascencente son: ", str (d ), str(a ), str(c ), str(e ), str(b ))
+                        print("La mediana es: ", str(c))
+                    else:
+                        print("Los números ordenados de forma ascencente son: ", str (d ), str(a ), str(c ), str(b ), str(e ))
+                        print("La mediana es: ", str(c))
+                else:
+                    if a<e:
+                        print("Los números ordenados de forma ascencente son: ", str (d ), str(a ), str(e ), str(c ), str(b ))
+                        print("La mediana es: ", str(e))
+                    else:
+                        print("Los números ordenados de forma ascencente son: ", str (d ), str(e ), str(a ), str(c ), str(b ))
+                        print("La mediana es: ", str(a))
+            else:
+                if e<b:
+                    if e<c:
+                        print("Los números ordenados de forma ascencente son: ", str (d ), str(e ), str(c ), str(a ), str(b ))
+                        print("La mediana es: ", str(c))
+                    elif a<e:
+                        print("Los números ordenados de forma ascencente son: ", str (d ), str(c ), str(a ), str(e ), str(b ))
+                        print("La mediana es: ", str(a))
+                    else:
+                        print("Los números ordenados de forma ascencente son: ", str (d ), str(c ), str(e ), str(a ), str(b ))
+                        print("La mediana es: ", str(e))
+                else:
+                    print("Los números ordenados de forma ascencente son: ", str (d ), str(c ), str(a ), str(b ), str(e ))
+                    print("La mediana es: ", str(a))
+
+    elif b<c  and b<e:
+        if a<c:
+            if c<e:
+                print("Los números ordenados de forma ascencente son: ", str (d ), str(b ), str(a ), str(c ), str(e ))
+                print("La mediana es: ", str(a))
+            elif a<e:
+                print("Los números ordenados de forma ascencente son: ", str (d ), str(b ), str(a ), str(e ), str(c ))
+                print("La mediana es: ", str(a))
+            else:
+                print("Los números ordenados de forma ascencente son: ", str (d ), str(b ), str(e ), str(a ), str(c ))
+                print("La mediana es: ", str(e))
+        elif c<e:
+            if e<a:
+                print("Los números ordenados de forma ascencente son: ", str (d ), str(b ), str(c ), str(e ), str(a ))
+                print("La mediana es: ", str(c))
+            else:
+                print("Los números ordenados de forma ascencente son: ", str (d ), str(b ), str(c ), str(a ), str(e ))
+                print("La mediana es: ", str(c))
+        else:
+            print("Los números ordenados de forma ascencente son: ", str (d ), str(b ), str(e ), str(c ), str(a ))
+            print("La mediana es: ", str(e))
+    else:
+        if c<b:
+            if c<e:
+                if a<e:
+                    print("Los números ordenados de forma ascencente son: ", str (d ), str(c ), str(b ), str(a ), str(e ))
+                    print("La mediana es: ", str(b))
+                elif b<e:
+                    print("Los números ordenados de forma ascencente son: ", str (d ), str(c ), str(b ), str(e ), str(a ))
+                    print("La mediana es: ", str(b))
+                else:
+                    print("Los números ordenados de forma ascencente son: ", str (d ), str(c ), str(e ), str(b ), str(a ))
+                    print("La mediana es: ", str(e))
+            else:
+                print("Los números ordenados de forma ascencente son: ", str (d ), str(e ), str(c ), str(b ), str(a ))
+                print("La mediana es: ", str(c))
+        else:
+            if c<a:
+                print("Los números ordenados de forma ascencente son: ", str (d ), str(e ), str(b ), str(c ), str(a ))
+                print("La mediana es: ", str(b))
+            else:
+                print("Los números ordenados de forma ascencente son: ", str (d ), str(e ), str(b ), str(a ), str(c ))
+                print("La mediana es: ", str(b))
+else:
+    if a<b:
+        if b<c:
+            if c<d:
+                print("Los números ordenados de forma ascendente son: ", str (e ), str(a ), str(b ), str(c ), str(d ))
+                print("La mediana es: ", str(b))
+            elif d<a:
+                print("Los números ordenados de forma ascendente son: ", str (e ), str(d ), str(a ), str(b ), str(c ))
+                print("La mediana es: ", str(a))
+            elif b<d:
+                print("Los números ordenados de forma ascendente son: ", str (e ), str(a ), str(b ), str(d ), str(c ))
+                print("La mediana es: ", str(b))
+            else:
+                print("Los números ordenados de forma ascendente son: ", str (e ), str(a ), str(d ), str(b ), str(c ))
+                print("La mediana es: ", str(d))
+        else:
+            if a<c:
+                if c<d:
+                    if d<b:
+                        print("Los números ordenados de forma ascendente son: ", str (e ), str(a ), str(c ), str(d ), str(b ))
+                        print("La mediana es: ", str(c))
+                    else:
+                        print("Los números ordenados de forma ascendente son: ", str (e ), str(a ), str(c ), str(b ), str(d ))
+                        print("La mediana es: ", str(c))
+                else:
+                    if a<d:
+                        print("Los números ordenados de forma ascendente son: ", str (e ), str(a ), str(d ), str(c ), str(b ))
+                        print("La mediana es: ", str(d))
+                    else:
+                        print("Los números ordenados de forma ascendente son: ", str (e ), str(d ), str(a ), str(c ), str(b ))
+                        print("La mediana es: ", str(a))
+            else:
+                if d<b:
+                    if d<c:
+                        print("Los números ordenados de forma ascendente son: ", str (e ), str(d ), str(c ), str(a ), str(b ))
+                        print("La mediana es: ", str(c))
+                    elif a<d:
+                        print("Los números ordenados de forma ascendente son: ", str (e ), str(c ), str(a ), str(d ), str(b ))
+                        print("La mediana es: ", str(a))
+                    else:
+                        print("Los números ordenados de forma ascendente son: ", str (e ), str(c ), str(d ), str(a ), str(b ))
+                        print("La mediana es: ", str(d))
+                else:
+                    print("Los números ordenados de forma ascendente son: ", str (e ), str(c ), str(a ), str(b ), str(d ))
+                    print("La mediana es: ", str(a))
+
+    elif b<c  and b<d:
+        if a<c:
+            if c<d:
+                print("Los números ordenados de forma ascendente son: ", str (e ), str(b ), str(a ), str(c ), str(d ))
+                print("La mediana es: ", str(a))
+            elif a<d:
+                print("Los números ordenados de forma ascendente son: ", str (e ), str(b ), str(a ), str(d ), str(c ))
+                print("La mediana es: ", str(a))
+            else:
+                print("Los números ordenados de forma ascendente son: ", str (e ), str(b ), str(d ), str(a ), str(c ))
+                print("La mediana es: ", str(d))
+        elif c<d:
+            if d<a:
+                print("Los números ordenados de forma ascendente son: ", str (e ), str(b ), str(c ), str(d ), str(a ))
+                print("La mediana es: ", str(c))
+            else:
+                print("Los números ordenados de forma ascendente son: ", str (e ), str(b ), str(c ), str(a ), str(d ))
+                print("La mediana es: ", str(c))
+        else:
+            print("Los números ordenados de forma ascendente son: ", str (e ), str(b ), str(d ), str(c ), str(a ))
+            print("La mediana es: ", str(d))
+    else:
+        if c<b:
+            if c<d:
+                if a<d:
+                    print("Los números ordenados de forma ascendente son: ", str (e ), str(c ), str(b ), str(a ), str(d ))
+                    print("La mediana es: ", str(b))
+                elif b<d:
+                    print("Los números ordenados de forma ascendente son: ", str (e ), str(c ), str(b ), str(d ), str(a ))
+                    print("La mediana es: ", str(b))
+                else:
+                    print("Los números ordenados de forma ascendente son: ", str (e ), str(c ), str(d ), str(b ), str(a ))
+                    print("La mediana es: ", str(d))
+            else:
+                print("Los números ordenados de forma ascendente son: ", str (e ), str(d ), str(c ), str(b ), str(a ))
+                print("La mediana es: ", str(c))
+        else:
+            if c<a:
+                print("Los números ordenados de forma ascendente son: ", str (e ), str(d ), str(b ), str(c ), str(a ))
+                print("La mediana es: ", str(b))
+            else:
+                print("Los números ordenados de forma ascendente son: ", str (e ), str(d ), str(b ), str(a ), str(c ))
+                print("La mediana es: ", str(b))
+
+if a>b and a>c and a>d and a>e:
+    if b>c:
+        if c>d:
+            if d>e:
+                print("Los números ordenados de forma descendente son: ", str(a), str(b), str(c), str(d), str(e))
+            elif e>b:
+                print("Los números ordenados de forma descendente son: ", str(a), str(e), str(b), str(c), str(d))
+            elif c>e:
+                print("Los números ordenados de forma descendente son: ", str(a), str(b), str(c), str(e), str(d))
+            else:
+                print("Los números ordenados de forma descendente son: ", str(a), str(b), str(e), str(c), str(d))
+        else:
+            if b>d:
+                if d>e:
+                    if e>c:
+                        print("Los números ordenados de forma descendente son: ", str(a), str(b), str(d), str(e), str(c))
+                    else:
+                        print("Los números ordenados de forma descendente son: ", str(a), str(b), str(d), str(c), str(e))
+                else:
+                    if b>e:
+                        print("Los números ordenados de forma descendente son: ", str(a), str(b), str(e), str(d), str(c))
+                    else:
+                        print("Los números ordenados de forma descendente son: ", str(a), str(e), str(b), str(d), str(c))
+            else:
+                if e>c:
+                    if e>d:
+                        print("Los números ordenados de forma descendente son: ", str(a), str(e), str(d), str(b), str(c))
+                    elif b>e:
+                        print("Los números ordenados de forma descendente son: ", str(a), str(d), str(b), str(e), str(c))
+                    else:
+                        print("Los números ordenados de forma descendente son: ", str(a), str(d), str(e), str(b), str(c))
+                else:
+                    print("Los números ordenados de forma descendente son: ", str(a), str(d), str(b), str(c), str(e))
+
+    elif c>d  and c>e:
+        if b>d:
+            if d>e:
+                print("Los números ordenados de forma descendente son: ", str(a), str(c), str(b), str(d), str(e))
+            elif b>e:
+                print("Los números ordenados de forma descendente son: ", str(a), str(c), str(b), str(e), str(d))
+            else:
+                print("Los números ordenados de forma descendente son: ", str(a), str(c), str(e), str(b), str(d))
+        elif d>e:
+            if e>b:
+                print("Los números ordenados de forma descendente son: ", str(a), str(c), str(d), str(e), str(b))
+            else:
+                print("Los números ordenados de forma descendente son: ", str(a), str(c), str(d), str(b), str(e))
+        else:
+            print("Los números ordenados de forma descendente son: ", str(a), str(c), str(e), str(d), str(b))
+    else:
+        if d>c:
+            if d>e:
+                if b>e:
+                    print("Los números ordenados de forma descendente son: ", str(a), str(d), str(c), str(b), str(e))
+                elif c>e:
+                    print("Los números ordenados de forma descendente son: ", str(a), str(d), str(c), str(e), str(b))
+                else:
+                    print("Los números ordenados de forma descendente son: ", str(a), str(d), str(e), str(c), str(b))
+            else:
+                print("Los números ordenados de forma descendente son: ", str(a), str(e), str(d), str(c), str(b))
+        else:
+            if d>b:
+                print("Los números ordenados de forma descendente son: ", str(a), str(e), str(c), str(d), str(b))
+            else:
+                print("Los números ordenados de forma descendente son: ", str(a), str(e), str(c), str(b), str(d))
+elif b>a and b>c and b>d and b>e:
+    if a>c:
+        if c>d:
+            if d>e:
+                print("Los números ordenados de forma descendente son: ", str(b), str(a), str(c), str(d), str(e))
+            elif e>a:
+                print("Los números ordenados de forma descendente son: ", str(b), str(e), str(a), str(c), str(d))
+            elif c>e:
+                print("Los números ordenados de forma descendente son: ", str(b), str(a), str(c), str(e), str(d))
+            else:
+                print("Los números ordenados de forma descendente son: ", str(b), str(a), str(e), str(c), str(d))
+        else:
+            if a>d:
+                if d>e:
+                    if e>c:
+                        print("Los números ordenados de forma descendente son: ", str(b), str(a), str(d), str(e), str(c))
+                    else:
+                        print("Los números ordenados de forma descendente son: ", str(b), str(a), str(d), str(c), str(e))
+                else:
+                    if a>e:
+                        print("Los números ordenados de forma descendente son: ", str(b), str(a), str(e), str(d), str(c))
+                    else:
+                        print("Los números ordenados de forma descendente son: ", str(b), str(e), str(a), str(d), str(c))
+            else:
+                if e>c:
+                    if e>d:
+                        print("Los números ordenados de forma descendente son: ", str(b), str(e), str(d), str(a), str(c))
+                    elif a>e:
+                        print("Los números ordenados de forma descendente son: ", str(b), str(d), str(a), str(e), str(c))
+                    else:
+                        print("Los números ordenados de forma descendente son: ", str(b), str(d), str(e), str(a), str(c))
+                else:
+                    print("Los números ordenados de forma descendente son: ", str(b), str(d), str(a), str(c), str(e))
+
+    elif c>d  and c>e:
+        if a>d:
+            if d>e:
+                print("Los números ordenados de forma descendente son: ", str(b), str(c), str(a), str(d), str(e))
+            elif a>e:
+                print("Los números ordenados de forma descendente son: ", str(b), str(c), str(a), str(e), str(d))
+            else:
+                print("Los números ordenados de forma descendente son: ", str(b), str(c), str(e), str(a), str(d))
+        elif d>e:
+            if e>a:
+                print("Los números ordenados de forma descendente son: ", str(b), str(c), str(d), str(e), str(a))
+            else:
+                print("Los números ordenados de forma descendente son: ", str(b), str(c), str(d), str(a), str(e))
+        else:
+            print("Los números ordenados de forma descendente son: ", str(b), str(c), str(e), str(d), str(a))
+    else:
+        if d>c:
+            if d>e:
+                if a>e:
+                    print("Los números ordenados de forma descendente son: ", str(b), str(d), str(c), str(a), str(e))
+                elif c>e:
+                    print("Los números ordenados de forma descendente son: ", str(b), str(d), str(c), str(e), str(a))
+                else:
+                    print("Los números ordenados de forma descendente son: ", str(b), str(d), str(e), str(c), str(a))
+            else:
+                print("Los números ordenados de forma descendente son: ", str(b), str(e), str(d), str(c), str(a))
+        else:
+            if d>a:
+                print("Los números ordenados de forma descendente son: ", str(b), str(e), str(c), str(d), str(a))
+            else:
+                print("Los números ordenados de forma descendente son: ", str(b), str(e), str(c), str(a), str(d))
+elif c>a and c>b and c>d and c>e:
+    if a>b:
+        if b>d:
+            if d>e:
+                print("Los números ordenados de forma descendente son: ", str(c), str(a), str(b), str(d), str(e))
+            elif e>a:
+                print("Los números ordenados de forma descendente son: ", str(c), str(e), str(a), str(b), str(d))
+            elif b>e:
+                print("Los números ordenados de forma descendente son: ", str(c), str(a), str(b), str(e), str(d))
+            else:
+                print("Los números ordenados de forma descendente son: ", str(c), str(a), str(e), str(b), str(d))
+        else:
+            if a>d:
+                if d>e:
+                    if e>b:
+                        print("Los números ordenados de forma descendente son: ", str(c), str(a), str(d), str(e), str(b))
+                    else:
+                        print("Los números ordenados de forma descendente son: ", str(c), str(a), str(d), str(b), str(e))
+                else:
+                    if a>e:
+                        print("Los números ordenados de forma descendente son: ", str(c), str(a), str(e), str(d), str(b))
+                    else:
+                        print("Los números ordenados de forma descendente son: ", str(c), str(e), str(a), str(d), str(b))
+            else:
+                if e>b:
+                    if e>d:
+                        print("Los números ordenados de forma descendente son: ", str(c), str(e), str(d), str(a), str(b))
+                    elif a>e:
+                        print("Los números ordenados de forma descendente son: ", str(c), str(d), str(a), str(e), str(b))
+                    else:
+                        print("Los números ordenados de forma descendente son: ", str(c), str(d), str(e), str(a), str(b))
+                else:
+                    print("Los números ordenados de forma descendente son: ", str(c), str(d), str(a), str(b), str(e))
+
+    elif b>d  and b>e:
+        if a>d:
+            if d>e:
+                print("Los números ordenados de forma descendente son: ", str(c), str(b), str(a), str(d), str(e))
+            elif a>e:
+                print("Los números ordenados de forma descendente son: ", str(c), str(b), str(a), str(e), str(d))
+            else:
+                print("Los números ordenados de forma descendente son: ", str(c), str(b), str(e), str(a), str(d))
+        elif d>e:
+            if e>a:
+                print("Los números ordenados de forma descendente son: ", str(c), str(b), str(d), str(e), str(a))
+            else:
+                print("Los números ordenados de forma descendente son: ", str(c), str(b), str(d), str(a), str(e))
+        else:
+            print("Los números ordenados de forma descendente son: ", str(c), str(b), str(e), str(d), str(a))
+    else:
+        if d>b:
+            if d>e:
+                if a>e:
+                    print("Los números ordenados de forma descendente son: ", str(c), str(d), str(b), str(a), str(e))
+                elif b>e:
+                    print("Los números ordenados de forma descendente son: ", str(c), str(d), str(b), str(e), str(a))
+                else:
+                    print("Los números ordenados de forma descendente son: ", str(c), str(d), str(e), str(b), str(a))
+            else:
+                print("Los números ordenados de forma descendente son: ", str(c), str(e), str(d), str(b), str(a))
+        else:
+            if d>a:
+                print("Los números ordenados de forma descendente son: ", str(c), str(e), str(b), str(d), str(a))
+            else:
+                print("Los números ordenados de forma descendente son: ", str(c), str(e), str(b), str(a), str(d))
+elif d>a and d>b and d>c and d>e:
+    if a>b:
+        if b>c:
+            if c>e:
+                print("Los números ordenados de forma descendente son: ", str(d), str(a), str(b), str(c), str(e))
+            elif e>a:
+                print("Los números ordenados de forma descendente son: ", str(d), str(e), str(a), str(b), str(c))
+            elif b>e:
+                print("Los números ordenados de forma descendente son: ", str(d), str(a), str(b), str(e), str(c))
+            else:
+                print("Los números ordenados de forma descendente son: ", str(d), str(a), str(e), str(b), str(c))
+        else:
+            if a>c:
+                if c>e:
+                    if e>b:
+                        print("Los números ordenados de forma descendente son: ", str(d), str(a), str(c), str(e), str(b))
+                    else:
+                        print("Los números ordenados de forma descendente son: ", str(d), str(a), str(c), str(b), str(e))
+                else:
+                    if a>e:
+                        print("Los números ordenados de forma descendente son: ", str(d), str(a), str(e), str(c), str(b))
+                    else:
+                        print("Los números ordenados de forma descendente son: ", str(d), str(e), str(a), str(c), str(b))
+            else:
+                if e>b:
+                    if e>c:
+                        print("Los números ordenados de forma descendente son: ", str(d), str(e), str(c), str(a), str(b))
+                    elif a>e:
+                        print("Los números ordenados de forma descendente son: ", str(d), str(c), str(a), str(e), str(b))
+                    else:
+                        print("Los números ordenados de forma descendente son: ", str(d), str(c), str(e), str(a), str(b))
+                else:
+                    print("Los números ordenados de forma descendente son: ", str(d), str(c), str(a), str(b), str(e))
+
+    elif b>c  and b>e:
+        if a>c:
+            if c>e:
+                print("Los números ordenados de forma descendente son: ", str(d), str(b), str(a), str(c), str(e))
+            elif a>e:
+                print("Los números ordenados de forma descendente son: ", str(d), str(b), str(a), str(e), str(c))
+            else:
+                print("Los números ordenados de forma descendente son: ", str(d), str(b), str(e), str(a), str(c))
+        elif c>e:
+            if e>a:
+                print("Los números ordenados de forma descendente son: ", str(d), str(b), str(c), str(e), str(a))
+            else:
+                print("Los números ordenados de forma descendente son: ", str(d), str(b), str(c), str(a), str(e))
+        else:
+            print("Los números ordenados de forma descendente son: ", str(d), str(b), str(e), str(c), str(a))
+    else:
+        if c>b:
+            if c>e:
+                if a>e:
+                    print("Los números ordenados de forma descendente son: ", str(d), str(c), str(b), str(a), str(e))
+                elif b>e:
+                    print("Los números ordenados de forma descendente son: ", str(d), str(c), str(b), str(e), str(a))
+                else:
+                    print("Los números ordenados de forma descendente son: ", str(d), str(c), str(e), str(b), str(a))
+            else:
+                print("Los números ordenados de forma descendente son: ", str(d), str(e), str(c), str(b), str(a))
+        else:
+            if c>a:
+                print("Los números ordenados de forma descendente son: ", str(d), str(e), str(b), str(c), str(a))
+            else:
+                print("Los números ordenados de forma descendente son: ", str(d), str(e), str(b), str(a), str(c))
+else:
+    if a>b:
+        if b>c:
+            if c>d:
+                print("Los números ordenados de forma descendente son: ", str(e), str(a), str(b), str(c), str(d))
+            elif d>a:
+                print("Los números ordenados de forma descendente son: ", str(e), str(d), str(a), str(b), str(c))
+            elif b>d:
+                print("Los números ordenados de forma descendente son: ", str(e), str(a), str(b), str(d), str(c))
+            else:
+                print("Los números ordenados de forma descendente son: ", str(e), str(a), str(d), str(b), str(c))
+        else:
+            if a>c:
+                if c>d:
+                    if d>b:
+                        print("Los números ordenados de forma descendente son: ", str(e), str(a), str(c), str(d), str(b))
+                    else:
+                        print("Los números ordenados de forma descendente son: ", str(e), str(a), str(c), str(b), str(d))
+                else:
+                    if a>d:
+                        print("Los números ordenados de forma descendente son: ", str(e), str(a), str(d), str(c), str(b))
+                    else:
+                        print("Los números ordenados de forma descendente son: ", str(e), str(d), str(a), str(c), str(b))
+            else:
+                if d>b:
+                    if d>c:
+                        print("Los números ordenados de forma descendente son: ", str(e), str(d), str(c), str(a), str(b))
+                    elif a>d:
+                        print("Los números ordenados de forma descendente son: ", str(e), str(c), str(a), str(d), str(b))
+                    else:
+                        print("Los números ordenados de forma descendente son: ", str(e), str(c), str(d), str(a), str(b))
+                else:
+                    print("Los números ordenados de forma descendente son: ", str(e), str(c), str(a), str(b), str(d))
+
+    elif b>c  and b>d:
+        if a>c:
+            if c>d:
+                print("Los números ordenados de forma descendente son: ", str(e), str(b), str(a), str(c), str(d))
+            elif a>d:
+                print("Los números ordenados de forma descendente son: ", str(e), str(b), str(a), str(d), str(c))
+            else:
+                print("Los números ordenados de forma descendente son: ", str(e), str(b), str(d), str(a), str(c))
+        elif c>d:
+            if d>a:
+                print("Los números ordenados de forma descendente son: ", str(e), str(b), str(c), str(d), str(a))
+            else:
+                print("Los números ordenados de forma descendente son: ", str(e), str(b), str(c), str(a), str(d))
+        else:
+            print("Los números ordenados de forma descendente son: ", str(e), str(b), str(d), str(c), str(a))
+    else:
+        if c>b:
+            if c>d:
+                if a>d:
+                    print("Los números ordenados de forma descendente son: ", str(e), str(c), str(b), str(a), str(d))
+                elif b>d:
+                    print("Los números ordenados de forma descendente son: ", str(e), str(c), str(b), str(d), str(a))
+                else:
+                    print("Los números ordenados de forma descendente son: ", str(e), str(c), str(d), str(b), str(a))
+            else:
+                print("Los números ordenados de forma descendente son: ", str(e), str(d), str(c), str(b), str(a))
+        else:
+            if c>a:
+                print("Los números ordenados de forma descendente son: ", str(e), str(d), str(b), str(c), str(a))
+            else:
+                print("Los números ordenados de forma descendente son: ", str(e), str(d), str(b), str(a), str(c))
+
+if a<b and a<c and a<d and a<e:
+    print("La raíz cúbica del menor número es", str((a)**(1/2)))
+    if b>c and b>d and b>e:
+        print("La potencia del mayor número elevado al menor número es", str(b**a))
+    elif c>d and c>e:
+        print("La potencia del mayor número elevado al menor número es", str(c**a))
+    elif d>e:
+        print("La potencia del mayor número elevado al menor número es", str(d**a))
+    else:
+        print("La potencia del mayor número elevado al menor número es", str(e**a))
+elif b<c and b<d and b<e:
+    print("La raíz cúbica del menor número es", str((b)**(1/2)))
+    if a>c and a>d and a>e:
+        print("La potencia del mayor número elevado al menor número es", str(a**b))
+    elif c>d and c>e:
+        print("La potencia del mayor número elevado al menor número es", str(c**b))
+    elif d>e:
+        print("La potencia del mayor número elevado al menor número es", str(d**b))
+    else:
+        print("La potencia del mayor número elevado al menor número es", str(e**b))
+elif c<d and c<e:
+    print("La raíz cúbica del menor número es", str((c)**(1/2)))
+    if a>b and a>d and a>e:
+        print("La potencia del mayor número elevado al menor número es", str(a**c))
+    elif b>d and b>e:
+        print("La potencia del mayor número elevado al menor número es", str(b**c))
+    elif d>e:
+        print("La potencia del mayor número elevado al menor número es", str(d**c))
+    else:
+        print("La potencia del mayor número elevado al menor número es", str(e**c))
+elif d<e:
+    print("La raíz cúbica del menor número es", str((d)**(1/2)))
+    if a>b and a>c and a>e:
+        print("La potencia del mayor número elevado al menor número es", str(a**d))
+    elif b>c and b>e:
+        print("La potencia del mayor número elevado al menor número es", str(b**d))
+    elif c>e:
+        print("La potencia del mayor número elevado al menor número es", str(c**d))
+    else:
+        print("La potencia del mayor número elevado al menor número es", str(e**d))
+else:
+    print("La raíz cúbica del menor número es", str((e)**(1/2)))
+    if a>b and a>c and a>d:
+        print("La potencia del mayor número elevado al menor número es", str(a**e))
+    elif b>c and b>d:
+        print("La potencia del mayor número elevado al menor número es", str(b**e))
+    elif c>d:
+        print("La potencia del mayor número elevado al menor número es", str(c**e))
+    else:
+        print("La potencia del mayor número elevado al menor número es", str(d**e))
+```
 ## Octavo Punto
 
 ### Problema planteado:
