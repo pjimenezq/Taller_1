@@ -162,20 +162,29 @@ Imprime el mensaje "la suma es igual al tercer número".
 El programa termina después de ejecutar una de las tres ramas condicionales, dependiendo de cómo se compare la suma con num3. En otras palabras, determina si la suma es mayor, menor o igual al tercer número ingresado por el usuario y proporciona un mensaje de acuerdo a esa comparación.
 
 ##### El código del problema es el siguiente:
-num1 = float (input("ingrese el primer numero: "))
-num2 = float (input("ingrese el segundo numero: "))
-num3 = float (input("ingrese el tercer numero: "))
+```
+# Solicita al usuario que ingrese el primer número y lo almacena en la variable num1
+num1 = float(input("Ingrese el primer número: "))
 
+# Solicita al usuario que ingrese el segundo número y lo almacena en la variable num2
+num2 = float(input("Ingrese el segundo número: "))
+
+# Solicita al usuario que ingrese el tercer número y lo almacena en la variable num3
+num3 = float(input("Ingrese el tercer número: "))
+
+# Calcula la suma de num1 y num2 y almacena el resultado en la variable suma
 suma = num1 + num2
 
+# Compara la suma con num3 y muestra un mensaje de acuerdo a la comparación
 if suma > num3:
-   print ("la suma es mayor que el tercer numero")
+   print("La suma es mayor que el tercer número")
 elif suma < num3:
-   print ("la suma es menor que el tercer numero")
+   print("La suma es menor que el tercer número")
 elif suma == num3:
-   print ("la suma es igual al tercer numero")
+   print("La suma es igual al tercer número")
 
    ##### El diagrama de flujo representando la solución del problema es el siguiente:
+  ```mermaid
    graph TD;
 Inicio(Inicio)-->Variable1
 Inicio(Inicio)-->Variable2
@@ -201,13 +210,17 @@ vocales: Una lista que contiene las letras 'a', 'e', 'i', 'o' y 'u', representan
 consonantes: Una lista que contiene varias letras, representando las consonantes en español.
 
 ##### El código del problema es el siguiente:
+```
+# Define las listas de vocales y consonantes
 vocales = ['a', 'e', 'i', 'o', 'u']
 consonantes = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'ñ', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z']
 
 letra = input("Ingrese una letra: ")
 
+# Verifica si la letra ingresada por el usuario es una vocal
 if letra in vocales:
     print("Es una vocal.")
+# Verifica si la letra ingresada por el usuario es una consonante
 elif letra in consonantes:
     print("Es una consonante.")
 else:
@@ -381,6 +394,7 @@ Se convierten los tiempos de segundos a minutos dividiendo por 60.
 Se imprime el resultado, indicando el tiempo en segundos y minutos que tomaría a cada entidad recorrer la distancia ingresada.
 
 ##### El código de la solución del problema es el siguiente:
+```
 distancia = float(input("Ingresa la distancia en metros: "))
 
 velocidad_luz = 299792458  # metros por segundo
