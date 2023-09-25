@@ -12,7 +12,7 @@ Agrocode industry
 ![logo](https://github.com/pjimenezq/Taller_1/assets/141860508/193f2c5d-2997-40d1-9a4b-ba168d9fdf8c)
 
 ## Primer punto
-
+**Problema planteado**
 
 ## Segundo punto
 **Problema planteado**
