@@ -197,9 +197,10 @@ Operacion{x % y == 0?}--No-->Decir2
 Decir1[x es multiplo de y]-->Fin
 Decir2[x no es multiplo de y]-->Fin
 Fin(Fin)
+```
 
 
-## Sexto punto
+# Sexto punto
 ### Problema planteado:
 ### Escriba un programa que solicite al usuario una letra y determine si es una vocal o una consonante.
 
@@ -225,7 +226,7 @@ elif letra in consonantes:
     print("Es una consonante.")
 else:
     print("No es ni vocal ni consonante.")
-
+```
 
 
 ## Séptimo punto
