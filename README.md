@@ -9,7 +9,7 @@ Agrocode industry
 * David Rodriguez Rueda
 
 ### Logo:
-![logo](https://github.com/pjimenezq/Taller_1/assets/141860508/193f2c5d-2997-40d1-9a4b-ba168d9fdf8c)
+![logo](https://github.com/pjimenezq/Taller_1/assets/141860508/136373ec-f9a4-4b51-a52a-1b1e893e1859)
 
 
 ## Primer punto
