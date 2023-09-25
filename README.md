@@ -187,19 +187,29 @@ elif suma == num3:
 ```
 
 ##### El diagrama de flujo representando la solución del problema es el siguiente:
-```mermaid
-   graph TD;
-Inicio(Inicio)-->Variable1
-Inicio(Inicio)-->Variable2
-Variable1[x : float]-->Inicializacion1
-Variable2[y: float]-->Inicializacion2
-Inicializacion1[Introduzca un valor para x]-->Operacion
-Inicializacion2[Introduzca un valor para y]-->Operacion
-Operacion{x % y == 0?}--Sí-->Decir1
-Operacion{x % y == 0?}--No-->Decir2
-Decir1[x es multiplo de y]-->Fin
-Decir2[x no es multiplo de y]-->Fin
-Fin(Fin)
+```graph TD
+    Inicio[Inicio]
+    Input1[Solicitar num1]
+    Input2[Solicitar num2]
+    Input3[Solicitar num3]
+    Calcular[Calcular suma]
+    Comparar[Comparar suma con num3]
+    Mayor[La suma es mayor]
+    Menor[La suma es menor]
+    Igual[La suma es igual]
+    Fin[Fin]
+    
+    Inicio --> Input1
+    Input1 --> Input2
+    Input2 --> Input3
+    Input3 --> Calcular
+    Calcular --> Comparar
+    Comparar --> Mayor
+    Comparar --> Menor
+    Comparar --> Igual
+    Mayor --> Fin
+    Menor --> Fin
+    Igual --> Fin
 ```
 
 
