@@ -182,9 +182,10 @@ elif suma < num3:
    print("La suma es menor que el tercer número")
 elif suma == num3:
    print("La suma es igual al tercer número")
+```
 
-   ##### El diagrama de flujo representando la solución del problema es el siguiente:
-  ```mermaid
+##### El diagrama de flujo representando la solución del problema es el siguiente:
+```mermaid
    graph TD;
 Inicio(Inicio)-->Variable1
 Inicio(Inicio)-->Variable2
