@@ -187,31 +187,7 @@ elif suma == num3:
 ```
 
 ##### El diagrama de flujo representando la solución del problema es el siguiente:
-```mermaid
-graph TD;
-    Inicio[Inicio]
-    Input1[Solicitar num1]
-    Input2[Solicitar num2]
-    Input3[Solicitar num3]
-    Calcular[Calcular suma]
-    Comparar[Comparar suma con num3]
-    Mayor[La suma es mayor]
-    Menor[La suma es menor]
-    Igual[La suma es igual]
-    Fin[Fin]
-    
-    Inicio --> Input1
-    Input1 --> Input2
-    Input2 --> Input3
-    Input3 --> Calcular
-    Calcular --> Comparar
-    Comparar --> Mayor
-    Comparar --> Menor
-    Comparar --> Igual
-    Mayor --> Fin
-    Menor --> Fin
-    Igual --> Fin
-```
+
 ```mermaid
 flowchart TD;
     A(inicio) -->B[Primer número]
