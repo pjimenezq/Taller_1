@@ -187,7 +187,8 @@ elif suma == num3:
 ```
 
 ##### El diagrama de flujo representando la solución del problema es el siguiente:
-```graph TD
+```mermaid
+graph TD;
     Inicio[Inicio]
     Input1[Solicitar num1]
     Input2[Solicitar num2]
