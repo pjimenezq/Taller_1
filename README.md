@@ -146,14 +146,77 @@ Fin(Fin)
 
 ## Quinto punto
 
+### Problema planteado:
+### Realice un programa que lea tres números reales y determine si la suma de los dos primeros es mayor, menor o igual que el tercer número.
+
+### La solución del problema es la siguiente:
+Se solicita al usuario que ingrese tres números decimales. Cada número se almacena en las variables num1, num2 y num3.
+Se calcula la suma de num1 y num2, y el resultado se almacena en la variable suma.
+Se utiliza una estructura condicional if-elif-elif para comparar la suma con el valor de num3. A continuación se describen las condiciones y las acciones correspondientes:
+Si la suma es mayor que num3, se ejecuta la primera rama del condicional:
+Imprime el mensaje "la suma es mayor que el tercer número".
+Si la suma es menor que num3, se ejecuta la segunda rama del condicional:
+Imprime el mensaje "la suma es menor que el tercer número".
+Si la suma es igual a num3, se ejecuta la tercera rama del condicional:
+Imprime el mensaje "la suma es igual al tercer número".
+El programa termina después de ejecutar una de las tres ramas condicionales, dependiendo de cómo se compare la suma con num3. En otras palabras, determina si la suma es mayor, menor o igual al tercer número ingresado por el usuario y proporciona un mensaje de acuerdo a esa comparación.
+
+##### El código del problema es el siguiente:
+num1 = float (input("ingrese el primer numero: "))
+num2 = float (input("ingrese el segundo numero: "))
+num3 = float (input("ingrese el tercer numero: "))
+
+suma = num1 + num2
+
+if suma > num3:
+   print ("la suma es mayor que el tercer numero")
+elif suma < num3:
+   print ("la suma es menor que el tercer numero")
+elif suma == num3:
+   print ("la suma es igual al tercer numero")
+
+   ##### El diagrama de flujo representando la solución del problema es el siguiente:
+   graph TD;
+Inicio(Inicio)-->Variable1
+Inicio(Inicio)-->Variable2
+Variable1[x : float]-->Inicializacion1
+Variable2[y: float]-->Inicializacion2
+Inicializacion1[Introduzca un valor para x]-->Operacion
+Inicializacion2[Introduzca un valor para y]-->Operacion
+Operacion{x % y == 0?}--Sí-->Decir1
+Operacion{x % y == 0?}--No-->Decir2
+Decir1[x es multiplo de y]-->Fin
+Decir2[x no es multiplo de y]-->Fin
+Fin(Fin)
+
 
 ## Sexto punto
+### Problema planteado:
+### Escriba un programa que solicite al usuario una letra y determine si es una vocal o una consonante.
+
+### La solución del problema es la siguiente:
+Se solicita al usuario que ingrese una letra.
+Se definen dos listas de caracteres:
+vocales: Una lista que contiene las letras 'a', 'e', 'i', 'o' y 'u', representando las vocales en español.
+consonantes: Una lista que contiene varias letras, representando las consonantes en español.
+
+##### El código del problema es el siguiente:
+vocales = ['a', 'e', 'i', 'o', 'u']
+consonantes = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'ñ', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z']
+
+letra = input("Ingrese una letra: ")
+
+if letra in vocales:
+    print("Es una vocal.")
+elif letra in consonantes:
+    print("Es una consonante.")
+else:
+    print("No es ni vocal ni consonante.")
+
 
 
 ## Séptimo punto
 
-
-## Octavo punto
 
 ### Problema planteado:
 ### Escriba un programa al que se le ingrese la frecuencia de una onda en hz y como salida arroje en que parte del espectro electromagnético se encuentra.
@@ -298,5 +361,51 @@ else:
 ```
 
 ## Décimo punto
+### Problema planteado: 
+Escriba un programa que dada una distancia calcula:
 
+El tiempo que le tomaría a la luz recorrer la distancia.
+El tiempo que le tomaría al sonido (en el aire) recorrer la distancia.
+El tiempo que le tomaría al vehículo comercial más veloz recorrer la distancia.
+El tiempo que le tomaría a Bolt recorrer la distancia.
+
+### La solución del problema es la siguiente:
+Se solicita al usuario que ingrese una distancia en metros.
+Se definen las velocidades en metros por segundo (m/s) para cada entidad:
+velocidad_luz: La velocidad de la luz en el vacío, aproximadamente 299,792,458 metros por segundo.
+velocidad_sonido: La velocidad del sonido en el aire, aproximadamente 343 metros por segundo.
+velocidad_carro: Suponemos una velocidad para un vehículo comercial rápido en metros por segundo.
+velocidad_bolt: Suponemos una velocidad para Usain Bolt en metros por segundo.
+Se calculan los tiempos en segundos que tomaría a cada entidad recorrer la distancia ingresada, dividiendo la distancia por la velocidad correspondiente.
+Se convierten los tiempos de segundos a minutos dividiendo por 60.
+Se imprime el resultado, indicando el tiempo en segundos y minutos que tomaría a cada entidad recorrer la distancia ingresada.
+
+##### El código de la solución del problema es el siguiente:
+distancia = float(input("Ingresa la distancia en metros: "))
+
+velocidad_luz = 299792458  # metros por segundo
+velocidad_sonido = 343  # metros por segundo
+velocidad_carro = 455.28  # metros por segundo (supongamos)
+velocidad_bolt = 11.6  # metros por segundo (supongamos)
+
+# Calcula los tiempos en segundos
+tiempo_luz_segundos = distancia / velocidad_luz
+tiempo_sonido_segundos = distancia / velocidad_sonido
+tiempo_carro_segundos = distancia / velocidad_carro
+tiempo_bolt_segundos = distancia / velocidad_bolt
+
+# Convierte los tiempos en minutos
+tiempo_minutos_luz = tiempo_luz_segundos / 60
+tiempo_minutos_sonido = tiempo_sonido_segundos / 60
+tiempo_minutos_carro = tiempo_carro_segundos / 60
+tiempo_minutos_bolt = tiempo_bolt_segundos / 60
+
+print()
+print(f"El tiempo que le tomaría a la luz recorrer {distancia} metros es aproximadamente {tiempo_luz_segundos:.2f} segundos y {tiempo_minutos_luz:.2f} minutos.")
+print()
+print(f"El tiempo que le tomaría al sonido recorrer {distancia} metros es aproximadamente {tiempo_sonido_segundos:.2f} segundos y {tiempo_minutos_sonido:.2f} minutos.")
+print()
+print(f"El tiempo que le tomaría al vehículo más veloz recorrer {distancia} metros es aproximadamente {tiempo_carro_segundos:.2f} segundos y {tiempo_minutos_carro:.2f} minutos.")
+print()
+print(f"Usain Bolt recorrería {distancia} metros en aproximadamente {tiempo_bolt_segundos:.2f} segundos y {tiempo_minutos_bolt:.2f} minutos.")
 
