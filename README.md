@@ -11,8 +11,9 @@ Agrocode industry
 ### Logo:
 ![logo](https://github.com/pjimenezq/Taller_1/assets/141860508/193f2c5d-2997-40d1-9a4b-ba168d9fdf8c)
 
+
 ## Primer punto
-![quiz](https://github.com/pjimenezq/Taller_1/assets/141860508/15911cc4-4057-4889-8534-5958d1fade40)
+![quiz](https://github.com/pjimenezq/Taller_1/assets/141860508/1e60cbe3-b5b1-4748-a8ea-30e5b8c5d569)
 
 
 ## Segundo punto
