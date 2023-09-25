@@ -201,7 +201,7 @@ Fin(Fin)
 ```
 
 
-# Sexto punto
+## Sexto punto
 ### Problema planteado:
 ### Escriba un programa que solicite al usuario una letra y determine si es una vocal o una consonante.
 
