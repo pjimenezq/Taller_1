@@ -214,16 +214,17 @@ graph TD;
 ```
 ```mermaid
 flowchart TD;
-A(inicio) -->B[Primer número]
-A-->C[Segundo número]
-A-->D[Tercer número]
-B-->E[Calcular suma]
-C-->E
-E-->D{La suma es mayor que el tercer número?};
-D--Sí-->H[La suma es mayor.]-->L(Fin);
-D--No-->I{La suma es menor que el tercer número?};
-I--Sí--J[La suma es menor.]-->L;
-I--No-->K[La suma es igual.] -->L;
+    A(inicio) -->B[Primer número]
+    A-->C[Segundo número]
+    A-->D[Tercer número]
+    B-->E[Calcular suma]
+    C-->E
+    D-->F
+    E-->F{La suma es mayor que el tercer número?};
+    F--Sí-->H[La suma es mayor.]-->L(Fin);
+    F--No-->I{La suma es menor que el tercer número?};
+    I--Sí-->J[La suma es menor.]-->L;
+    I--No-->K[La suma es igual.] -->L;
 ```
 
 
